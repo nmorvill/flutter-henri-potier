@@ -16,7 +16,7 @@ jobs:
         with:
           channel: stable
           distribution: 'zulu'
-          java-version: '11
+          java-version: '11'
 
       - name: Install dependencies
         run: flutter pub get
