@@ -1,13 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_app/domain/services/cart_service.dart';
 
 import '../../domain/entities/book.dart';
 
-class CartUseCases {
+class CartUseCases extends ChangeNotifier {
 
-  Map<Book, int> cart = {};
+  final Map<Book, int> _cart = {};
+
+  Map<Book, int> get cart => _cart;
 
   double getCartPrice() {
-    return cart.keys.map((x) => getCartLinePrice(x)).reduce((a,b) => a+b);
+    return _cart.keys.map((x) => getCartLinePrice(x)).reduce((a,b) => a+b);
   }
 
   double getCartLinePrice(Book book){
@@ -16,24 +19,26 @@ class CartUseCases {
 
   addToCart(Book book) {
     if(cart.containsKey(book)) {
-      cart[book] = cart[book]! + 1;
+      _cart[book] = _cart[book]! + 1;
     } else {
-      cart[book] = 1;
+      _cart[book] = 1;
     }
+    notifyListeners();
   }
 
   removeFromCart(Book book) {
-    if(cart.containsKey(book)) {
-      if(cart[book]! > 1) {
-        cart[book] = cart[book]! - 1;
+    if(_cart.containsKey(book)) {
+      if(_cart[book]! > 1) {
+        _cart[book] = _cart[book]! - 1;
       } else {
-        cart.remove(book);
+        _cart.remove(book);
       }
+      notifyListeners();
     }
   }
 
   int getNumberOfElementsInCart() {
-    return cart.length;
+    return _cart.length;
   }
 
 }
