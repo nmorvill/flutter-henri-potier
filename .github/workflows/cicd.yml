@@ -27,7 +27,6 @@ jobs:
           flutter analyze
           flutter test
           flutter build apk --debug
-          flutter build appbundle
 
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed. Note that Flutter projects will
