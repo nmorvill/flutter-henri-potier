@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/cart.dart';
+import 'package:flutter_app/data/repositories/book_repository_impl.dart';
+import 'package:flutter_app/interfaces/repositories/book_repository.dart';
 import 'package:flutter_app/library.dart';
 
 void main() {
@@ -12,6 +14,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    BookRepository br = new BookRepositoryImpl();
+    br.getBooks().then((x) => print(x.toString()));
+    br.getOffers(['c8fabf68-8374-48fe-a7ea-a00ccd07afff','a460afed-e5e7-4e39-a39d-c885c05db861']).then((x) => print(x.toString()));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
