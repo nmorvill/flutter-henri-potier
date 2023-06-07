@@ -25,17 +25,16 @@ class _shopPageState extends State<ShopPage> {
   Widget build(BuildContext context) {
     return Consumer<CartUseCases>(
         builder: (context, cart, child) {
-          return  Stack(
-            children: [
-              Column(
-                  children: [
+          return  Scaffold(
+              body: Stack(
+              children: [
+                Column(
+                    children: [
                     SizedBox(
                         height: MediaQuery.of(context).size.height * 1,
                         child: SwiperWidget(swiperController: swiperController )
-                    )
-                  ]
-              ),
-              Positioned(
+                    )]),
+                Positioned(
                   top: 0,
                   right: 0,
                   child: Padding(
@@ -49,8 +48,7 @@ class _shopPageState extends State<ShopPage> {
                       )
                   )
               )
-
-          ]);
+          ]));
         }
     );
   }
