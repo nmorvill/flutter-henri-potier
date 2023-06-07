@@ -16,7 +16,14 @@ class BookCardWidget extends StatelessWidget {
         //create a container with the image of the book
         Container(
             alignment: Alignment.center,
-            color: Colors.blue,
+            decoration:  BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
+                border: Border.all(color: Colors.black, width: 3),
+              image: const DecorationImage(
+                image: AssetImage('assets/images/parchemin.jpg'),
+                fit: BoxFit.cover,
+              )
+            ),
             child:
             Padding(
                 padding: const EdgeInsets.all(10),

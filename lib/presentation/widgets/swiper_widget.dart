@@ -20,7 +20,6 @@ class SwiperWidget extends StatelessWidget{
   Widget build(BuildContext context) {
 
     return CupertinoPageScaffold(
-      backgroundColor: Colors.green,
       child : Column (
         children: [
           SizedBox(

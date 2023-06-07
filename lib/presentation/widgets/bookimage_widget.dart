@@ -17,7 +17,10 @@ class BookImageWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(20,20,20, 10),
               child:
-                Image.network(book.cover )
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    child: Image.network(book.cover ),
+                  )
             )
         )
     );
