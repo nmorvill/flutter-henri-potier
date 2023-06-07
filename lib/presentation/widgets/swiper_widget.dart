@@ -9,7 +9,10 @@ import '../../domain/entities/book.dart';
 import 'bookcard_widget.dart';
 
 class SwiperWidget extends StatelessWidget{
-  const SwiperWidget({super.key, required swiperController});
+
+  AppinioSwiperController swiperController = AppinioSwiperController();
+
+  SwiperWidget({super.key, required this.swiperController});
 
 
 
@@ -47,6 +50,7 @@ class SwiperWidget extends StatelessWidget{
               )
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               swipeLeftButton(swiperController),
               swipeRightButton(swiperController)

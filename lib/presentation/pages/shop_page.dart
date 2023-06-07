@@ -27,7 +27,7 @@ class _shopPageState extends State<ShopPage> {
               children: [
                 SizedBox(
                     height: MediaQuery.of(context).size.height * 1,
-                    child: SwiperWidget(swiperController )
+                    child: SwiperWidget(swiperController: swiperController )
                 )
               ]
           );
