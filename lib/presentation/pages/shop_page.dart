@@ -1,5 +1,4 @@
 import 'package:appinio_swiper/controllers.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -12,12 +11,12 @@ class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _shopPageState();
+  State<StatefulWidget> createState() => _ShopPageState();
 
 }
 
 
-class _shopPageState extends State<ShopPage> {
+class _ShopPageState extends State<ShopPage> {
 
   AppinioSwiperController swiperController = AppinioSwiperController();
 

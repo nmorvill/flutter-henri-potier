@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/application/useCases/cart_use_cases.dart';
 import 'package:flutter_app/presentation/gorouter_configuration.dart';
-import 'package:flutter_app/presentation/pages/shop_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
