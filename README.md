@@ -1,6 +1,11 @@
-# flutter_app
+# Henri Potier mais en flutter
 
-A new Flutter project.
+C'est Henri Potier mais cette fois en Flutter
+
+# Étudiants:
+  Guillaume GRIMAULT
+  Noé MORVILLERS
+  Romain BAROU
 
 ## Getting Started
 
