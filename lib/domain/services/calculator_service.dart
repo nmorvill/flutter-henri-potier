@@ -25,13 +25,9 @@ class CalculatorService{
     }
   }
 
-  static double _calculatePercentage(double price, Offer offer){
-    return price * offer.value / 100;
-  }
+  static double _calculatePercentage(double price, Offer offer) => price * offer.value / 100;
 
-  static double _calculateMinus(double price, Offer offer){
-    return offer.value;
-  }
+  static double _calculateMinus(double price, Offer offer) => offer.value;
 
   static double _calculateSlice(double price, Offer offer){
     if(offer.sliceValue == null) throw Exception("Slice value is expected");

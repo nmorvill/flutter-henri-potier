@@ -18,6 +18,12 @@ void main(){
       expect(result, 10);
     });
 
+    test('CalculatorService should return 0 if no slice value is given for slice offer',(){
+      List<Offer> offer = [const Offer(type:OfferType.slice, value: 10)];
+      final double result = CalculatorService.computeBestOffer(350, offer);
+      expect(result, 0);
+    });
+
     test('CalculatorService should be able to calculate a slice offer',(){
       List<Offer> offer = [const Offer(type:OfferType.slice, value: 10, sliceValue: 100)];
       final double result = CalculatorService.computeBestOffer(350, offer);
