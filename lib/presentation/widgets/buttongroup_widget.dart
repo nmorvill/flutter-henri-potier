@@ -1,6 +1,7 @@
 import 'package:appinio_swiper/controllers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/presentation/widgets/ads_widget.dart';
 
 class Button extends StatelessWidget {
   final Function onTap;
@@ -72,6 +73,34 @@ Widget swipeLeftButton(AppinioSwiperController controller) {
       alignment: Alignment.center,
       child: const Icon(
         Icons.close,
+        color: CupertinoColors.white,
+        size: 40,
+      ),
+    ),
+  );
+}
+
+Widget swipeBackButton(BuildContext context, AppinioSwiperController controller) {
+  return Button(
+    onTap: () => playAd(context, controller),//controller.unswipe(),//playAd(controller),
+    child: Container(
+      height: 60,
+      width: 60,
+      decoration: BoxDecoration(
+        color: const Color(0xFFEAD538),
+        borderRadius: BorderRadius.circular(50),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFE1C62F).withOpacity(0.9),
+            spreadRadius: -10,
+            blurRadius: 20,
+            offset: const Offset(0, 20), // changes position of shadow
+          ),
+        ],
+      ),
+      alignment: Alignment.center,
+      child: const Icon(
+        Icons.replay,
         color: CupertinoColors.white,
         size: 40,
       ),

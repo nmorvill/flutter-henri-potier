@@ -33,6 +33,7 @@ class SwiperWidget extends StatelessWidget{
                         loop: true,
                         swipeOptions: AppinioSwipeOptions.horizontal,
                         cardsCount: snapshot.data!.length,
+                        unlimitedUnswipe: true,
                         onSwiping: (direction) => {
                           //TODO: IMPLEMENTER
                           print(direction)
@@ -53,6 +54,7 @@ class SwiperWidget extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               swipeLeftButton(swiperController),
+              swipeBackButton(context, swiperController),
               swipeRightButton(swiperController)
             ],
           )

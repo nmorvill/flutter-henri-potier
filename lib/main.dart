@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/application/useCases/cart_use_cases.dart';
+import 'package:flutter_app/presentation/gorouter_configuration.dart';
 import 'package:flutter_app/presentation/pages/shop_page.dart';
 import 'package:provider/provider.dart';
 
@@ -18,14 +19,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         fontFamily: 'HenryPotier2'
       ),
-      home: const ShopPage(),
     );
   }
 }
