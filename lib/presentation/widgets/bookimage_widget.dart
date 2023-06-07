@@ -13,7 +13,12 @@ class BookImageWidget extends StatelessWidget {
     return(
         Container(
           alignment: Alignment.center,
-          child: Image.network(book.cover),
+          child:
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20,20,20, 10),
+              child:
+                Image.network(book.cover )
+            )
         )
     );
   }
