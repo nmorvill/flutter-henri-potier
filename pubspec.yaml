@@ -94,3 +94,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+     - family: HenryPotier
+       fonts:
+         - asset: fonts/parry-hotter.ttf
+     - family: HenryPotier2
+       fonts:
+         - asset: fonts/parry-hotter2.TTF
