@@ -1,5 +1,6 @@
 import 'package:appinio_swiper/controllers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/presentation/burningAnimation/burning_paper_widget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -46,7 +47,10 @@ class _ShopPageState extends State<ShopPage> {
                         child: const Icon(Icons.shopping_cart),
                       )
                   )
-              )
+              ),
+                const IgnorePointer(
+                  child: BurningPaper(),
+                )
           ]));
         }
     );

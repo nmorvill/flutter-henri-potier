@@ -19,7 +19,7 @@ class BookImageWidget extends StatelessWidget {
               child:
                   ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
-                    child: Image.network(book.cover ),
+                    child: Image.network(book.cover),
                   )
             )
         )
