@@ -12,31 +12,27 @@ class BookCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return(
+    return (
         //create a container with the image of the book
         Container(
             alignment: Alignment.center,
-            decoration:  BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(15)),
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(15)),
                 border: Border.all(color: Colors.black, width: 3),
-              image: const DecorationImage(
-                image: AssetImage('assets/images/parchemin.jpg'),
-                fit: BoxFit.cover,
-              )
-            ),
-            child:
-            Padding(
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/parchemin.jpg'),
+                  fit: BoxFit.cover,
+                )),
+            child: Padding(
                 padding: const EdgeInsets.all(10),
-                child:
-                Column(
+                child: Column(
                   children: [
-                    BookImageWidget(book: book),
+                    BookImageWidget(
+                      book: book,
+                      borderRadius: 15,
+                    ),
                     BookCardDetailsWidget(book: book)
                   ],
-                )
-            )
-        )
-    );
+                ))));
   }
 }
-

@@ -12,5 +12,11 @@ class Book {
     required this.title,
     required this.synopsis,
   });
-  
+
+  @override
+  bool operator ==(Object other) =>
+      other is Book && other.runtimeType == runtimeType && other.isbn == isbn;
+
+  @override
+  int get hashCode => isbn.hashCode;
 }
