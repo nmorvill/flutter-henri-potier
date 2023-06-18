@@ -19,4 +19,8 @@ class Book {
 
   @override
   int get hashCode => isbn.hashCode;
+
+  Map<String, dynamic> toMap(int quantity) {
+    return {"isbn": isbn, "quantity": quantity};
+  }
 }
