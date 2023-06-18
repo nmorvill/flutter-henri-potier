@@ -3,7 +3,9 @@ import 'package:flutter_app/domain/entities/book.dart';
 import 'package:flutter_app/domain/services/cart_service.dart';
 
 class CartUseCases extends ChangeNotifier {
-  final Map<Book, int> _cart = {};
+  final Map<Book, int> _cart;
+
+  CartUseCases(this._cart);
 
   Map<Book, int> get cart => _cart;
 
