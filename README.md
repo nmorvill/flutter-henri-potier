@@ -24,6 +24,7 @@ C'est Henri Potier mais cette fois en Flutter et en plus on essaie d'implémente
   - Possibilité de revenir à la page précédente
 
 ## Features secondaires
+  - Utilisation d'assets et fonts customisées
   - Possibilité de revenir sur le précédent livre swipé via le bouton central en bas 
   - Affichage d'une pub lors d'un retour arrière (pour être 100% fidèle à Tinder)
   - Ajout d'une animation "papier brulée" à l'arrivée sur la première page (c'était surtout pour voir comment les animations fonctionnaient en flutter, le code provient majoritairement de : https://www.flutterclutter.dev/flutter/tutorials/burning-paper-effect/2020/1354/ )
