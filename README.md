@@ -1,6 +1,6 @@
 # Henri Potier mais en flutter
 
-C'est Henri Potier mais cette fois en Flutter et en plus on essaie d'implémenter la Clean Architecture
+C'est Henri Potier mais cette fois en Flutter et en plus on essaie d'implémenter (au moins en partie) la Clean Architecture
 
 # Étudiants:
   Guillaume GRIMAULT
