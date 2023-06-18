@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/application/useCases/cart_use_cases.dart';
 import 'package:flutter_app/domain/entities/book.dart';
-import 'package:flutter_app/presentation/widgets/bookimage_widget.dart';
 import 'package:provider/provider.dart';
 
 class BookCartWidget extends StatelessWidget {

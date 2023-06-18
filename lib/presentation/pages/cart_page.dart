@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/application/useCases/cart_use_cases.dart';
 import 'package:flutter_app/application/useCases/offer_use_cases.dart';
 import 'package:flutter_app/data/repositories/book_repository_impl.dart';
-import 'package:flutter_app/interfaces/repositories/book_repository.dart';
-import 'package:flutter_app/presentation/widgets/bookcard_widget.dart';
 import 'package:flutter_app/presentation/widgets/bookcart_widget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -48,6 +46,7 @@ class CartPage extends StatelessWidget {
                 Text("${cart.getCartPrice()}€",
                     style: const TextStyle(fontSize: 25))
               ]),
+              Divider(),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 const Text("Reduction", style: TextStyle(fontSize: 25)),
                 FutureBuilder(
@@ -63,6 +62,7 @@ class CartPage extends StatelessWidget {
                       return const CircularProgressIndicator();
                     })
               ]),
+              Divider(),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 const Text("Final price", style: TextStyle(fontSize: 25)),
                 FutureBuilder(
