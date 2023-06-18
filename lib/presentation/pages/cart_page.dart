@@ -57,7 +57,8 @@ class CartPage extends StatelessWidget {
                         return Text("- ${snapshot.data!}€",
                             style: const TextStyle(fontSize: 25));
                       } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
+                        return Text('0.0€',
+                        style: const TextStyle(fontSize: 25));
                       }
                       return const CircularProgressIndicator();
                     })
@@ -73,7 +74,8 @@ class CartPage extends StatelessWidget {
                         return Text("${cart.getCartPrice() - snapshot.data!}€",
                             style: const TextStyle(fontSize: 25));
                       } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
+                        return Text('0.0€',
+                        style: const TextStyle(fontSize: 25),);
                       }
                       return const CircularProgressIndicator();
                     })
