@@ -4,5 +4,5 @@ import 'package:flutter_app/domain/entities/book.dart';
 abstract class CartRepository {
   Future<CartUseCases> getPersistedCart();
 
-  void addToPersistedCart(Book book);
+  void updatePersistedCartQuantities(Book book, int quantity);
 }

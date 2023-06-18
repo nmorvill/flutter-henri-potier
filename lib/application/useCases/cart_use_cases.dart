@@ -4,8 +4,9 @@ import 'package:flutter_app/domain/services/cart_service.dart';
 
 class CartUseCases extends ChangeNotifier {
   final Map<Book, int> _cart;
+  final Function(Book, int) _updatePersistedCart;
 
-  CartUseCases(this._cart);
+  CartUseCases(this._cart, this._updatePersistedCart);
 
   Map<Book, int> get cart => _cart;
 
@@ -27,6 +28,7 @@ class CartUseCases extends ChangeNotifier {
     } else {
       _cart[book] = 1;
     }
+    _updatePersistedCart(book, _cart[book]!);
     notifyListeners();
   }
 
@@ -34,8 +36,10 @@ class CartUseCases extends ChangeNotifier {
     if (_cart.containsKey(book)) {
       if (_cart[book]! > 1) {
         _cart[book] = _cart[book]! - 1;
+        _updatePersistedCart(book, _cart[book]!);
       } else {
         _cart.remove(book);
+        _updatePersistedCart(book, 0);
       }
       notifyListeners();
     }

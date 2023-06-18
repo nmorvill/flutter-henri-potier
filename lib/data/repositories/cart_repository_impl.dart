@@ -11,13 +11,13 @@ class CartRepositoryImpl extends CartRepository {
   Database? database;
 
   CartRepositoryImpl() {
-    initDatabase();
+    _initDatabase();
   }
 
-  void initDatabase() async {
+  void _initDatabase() async {
     WidgetsFlutterBinding.ensureInitialized();
     database =
-        await openDatabase(join(await getDatabasesPath(), 'doggie_database.db'),
+        await openDatabase(join(await getDatabasesPath(), 'cart_database.db'),
             onCreate: (db, version) {
       return db.execute(
         'CREATE TABLE cart(isbn TEXT PRIMARY KEY, quantity INTEGER)',
@@ -37,18 +37,28 @@ class CartRepositoryImpl extends CartRepository {
         map.putIfAbsent(element, () => quantity);
       }
     });
-    return CartUseCases(map);
+    return CartUseCases(map, updatePersistedCartQuantities);
   }
 
   @override
-  void addToPersistedCart(Book book) {
-    // TODO: implement addToPersistedCart
+  void updatePersistedCartQuantities(Book book, int quantity) async {
+    if (quantity == 1) {
+      await database!.insert(
+        'cart',
+        book.toMap(quantity),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
+    if (quantity > 0) {
+      await database!.update('cart', book.toMap(quantity),
+          where: "isbn = ?", whereArgs: [book.isbn]);
+    } else {
+      await database!.delete('cart', where: "isbn = ?", whereArgs: [book.isbn]);
+    }
+    await getCart().then((e) => print(e));
   }
 
-  void _openDatabase() async {}
-
   Future<Map<String, int>> getCart() async {
-    initDatabase();
     var cart = await database!.query('cart');
     return Map.fromIterable(cart,
         key: (element) => element["isbn"],
