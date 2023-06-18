@@ -46,7 +46,7 @@ class CartPage extends StatelessWidget {
                 Text("${cart.getCartPrice()}€",
                     style: const TextStyle(fontSize: 25))
               ]),
-              Divider(),
+              const Divider(),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 const Text("Reduction", style: TextStyle(fontSize: 25)),
                 FutureBuilder(
@@ -63,7 +63,7 @@ class CartPage extends StatelessWidget {
                       return const CircularProgressIndicator();
                     })
               ]),
-              Divider(),
+              const Divider(),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 const Text("Final price", style: TextStyle(fontSize: 25)),
                 FutureBuilder(
